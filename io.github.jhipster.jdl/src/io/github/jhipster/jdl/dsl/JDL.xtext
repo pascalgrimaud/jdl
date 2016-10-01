@@ -21,9 +21,12 @@ JdlFeature:
  * ========================================================================= */
 
 JdlEntity:
-	'entity' name=ID ('{'
+	'entity' name=ID (tableName=JdlTableName)? ('{'
 		(fields+=JdlEntityField (',' fields+=JdlEntityField)*)?
 	'}')?;
+
+JdlTableName:
+	'(' name=ID ')';
 
 JdlEntityField:
 	name=ID type=JdlFieldType;
